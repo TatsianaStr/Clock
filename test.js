@@ -1,6 +1,5 @@
 'use strict';
 
-var timerId=0;
 var angleValue=0; //начальный угол
 const num=12;//значение элементов на часах
 const distance= 360/12;
@@ -64,16 +63,10 @@ var m = 360/60 * minutes;
 var h =360/12 * (hours + minutes/60); 
 	    clockHandsHours.style.transform = "rotate(" + h + "deg)";
     }
-
-  
-
-    function clockStart() {
-      timerId=setInterval(update, 1000);
+    function clockStart() {      
       update(); // <--  начать тут же, не ждать 1 секунду пока setInterval сработает
      
-    }   
-
-   
+    }      
     window.onload = update();
     window.setInterval (clockStart, 1000);
 
